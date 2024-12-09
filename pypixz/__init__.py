@@ -10,7 +10,7 @@ the dependencies required for the proper functioning of their program.
 from pypixz.install_packages import install_requirements, install_modules
 from pypixz.pypi_packages import get_module_info
 
-__version__ = 'release-1.1.1'
+__version__ = '1.1.2'
 __all__ = [
     'install_requirements',
     'install_modules',
