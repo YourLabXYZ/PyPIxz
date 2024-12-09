@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-The following table outlines the versions of **PyPIz** that are currently supported with security updates:
+The following table outlines the versions of **PyPIxz** that are currently supported with security updates:
 
 | Version         | Supported          |
 |-----------------|--------------------|
@@ -13,7 +13,7 @@ The following table outlines the versions of **PyPIz** that are currently suppor
 
 ## Reporting a Vulnerability
 
-We take security issues seriously. If you discover a vulnerability in **PyPIz**, please follow the steps below to report it responsibly:
+We take security issues seriously. If you discover a vulnerability in **PyPIxz**, please follow the steps below to report it responsibly:
 
 1. **Contact Us**:  
    Send message with the following information:
@@ -32,7 +32,7 @@ We take security issues seriously. If you discover a vulnerability in **PyPIz**,
 
 ## Security Best Practices for Users
 
-To ensure the security of your environment when using **PyPIz**, we recommend:
+To ensure the security of your environment when using **PyPIxz**, we recommend:
 - Always using the latest version of the software.
 - Running the application in a secure Python environment (e.g., virtual environments).
 - Reviewing third-party dependencies included in your `requirements.txt`.

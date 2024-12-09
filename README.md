@@ -14,7 +14,6 @@ PyPIxz allows you to quickly and efficiently install the dependencies required f
 
 ## Table of Contents
 
-- [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Compatibility](#compatibility)
@@ -46,15 +45,7 @@ pypixz.install_requirements("requirements.txt", enable_logging=False)
 
 - **Parameters**:
   - `requirements.txt`: Path to the file containing your dependencies.
-  - `log` *(bool)*: Enables or disables logging.
-
----
-
-## Features
-
-- **Fast Installation**: Manage your dependencies from a `requirements.txt` file.
-- **Modularity**: Compatible with other tools and libraries, such as `logging`.
-- **Broad Compatibility**: Supports modern Python versions (3.8+).
+  - `enable_logging` *(bool)*: Enables or disables logging.
 
 ---
 
