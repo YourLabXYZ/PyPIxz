@@ -1,6 +1,6 @@
 # Preview Changelog
 
-## [1.2.0-preview.1](https://github.com/YourLabXYZ/PyPIxz/compare/master...release/v2.0) - 2024-12-09
+## [1.2.0-preview.1] - 2024-12-09
 
 ### Build and Packaging Improvements
 
@@ -23,3 +23,5 @@
 ([#46](https://github.com/YourLabXYZ/PyPIxz/issues/46))
 - Reduced the number of characters in lines in Markdown files
 ([#45](https://github.com/YourLabXYZ/PyPIxz/issues/45))
+
+[1.2.0-preview.1]: https://github.com/YourLabXYZ/PyPIxz/compare/master...release/v1.2
