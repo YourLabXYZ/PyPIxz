@@ -57,7 +57,7 @@ PyPIxz officially supports **Python 3.8+** :
 
 ## Supported Features & Best–Practices
 
-PyPIxz is ready to meet the requirements of managing your dependencies in a 
+PyPIxz is ready to meet the requirements of managing your dependencies in a
 robust and reliable way, for today's needs.
 
 - **Fast Installation**: Manage your dependencies from a `requirements.txt` file.

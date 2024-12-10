@@ -12,9 +12,9 @@
 - Fixed punctuation problem.
 ([#51](https://github.com/YourLabXYZ/PyPIxz/issues/51))
 - Fixing the file in Markdown format.
-([#50](https://github.com/YourLabXYZ/PyPIxz/issues/50)) 
+([#50](https://github.com/YourLabXYZ/PyPIxz/issues/50))
 - Fixed issue with using dollar sign.
-([#49](https://github.com/YourLabXYZ/PyPIxz/issues/49)) 
+([#49](https://github.com/YourLabXYZ/PyPIxz/issues/49))
 - Fixed space issue in Markdown format files.
 ([#48](https://github.com/YourLabXYZ/PyPIxz/issues/48))
 - Specifying a code block language
