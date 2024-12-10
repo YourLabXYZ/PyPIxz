@@ -8,12 +8,14 @@ assignees: KDUser12
 ---
 
 #### Describe the bug
+
 A clear and concise description of what the bug is.  
 Example: *When I try to [...], the application crashes.*
 
 ---
 
 #### To Reproduce
+
 Steps to reproduce the behavior:  
 1. Go to '...'
 2. Click on '...'
@@ -23,12 +25,14 @@ Steps to reproduce the behavior:
 ---
 
 #### Expected behavior
+
 A clear and concise description of what you expected to happen.  
 Example: *The application should [...], but instead it [...].*
 
 ---
 
 #### Screenshots
+
 If applicable, add screenshots to help explain your problem.  
 Example: *Include screenshots of the error message or behavior.*
 
@@ -50,6 +54,7 @@ Example: *Include screenshots of the error message or behavior.*
 ---
 
 #### Additional context
+
 Add any other context about the problem here.  
 Example: *This bug seems to occur only when [...].*
 
