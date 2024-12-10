@@ -15,7 +15,7 @@ print(result)
 
 Output result of `get_module_info` command :
 
-```
+```console
 {'name': 'pypixz', 'description': 'PyPIxz is a simple, modern, and easy-to-use solution for managing your Python dependencies.', 'latest_version': '1.1.2', 'project_url': 'https://pypi.org/project/PyPIxz/', 'pypi_url': 'https://pypi.org/project/PyPIxz/', 'specific_version_exists': True}
 ```
 
