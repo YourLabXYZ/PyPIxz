@@ -1,6 +1,6 @@
 # Preview Changelog
 
-## [1.2.0-preview.1] - 2024-12-09
+## [1.2.0-preview.1][] - 2024-12-09
 
 ### Build and Packaging Improvements
 
