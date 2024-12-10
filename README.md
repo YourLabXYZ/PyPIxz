@@ -3,68 +3,28 @@
 
 **PyPIxz** is a simple, modern, and easy-to-use solution for managing your Python dependencies.
 
-[![Contributors](https://img.shields.io/github/contributors/yourlabxyz/PyPIxz.svg)](https://github.com/yourlabxyz/PyPIxz/graphs/contributors)
-[![Issues](https://img.shields.io/github/issues/yourlabxyz/PyPIxz.svg)](https://github.com/yourlabxyz/PyPIxz/issues)
-[![Pull Requests](https://img.shields.io/github/issues-pr/yourlabxyz/PyPIxz.svg)](https://github.com/yourlabxyz/PyPIxz/pulls)
-[![Forks](https://img.shields.io/github/forks/yourlabxyz/PyPIxz.svg)](https://github.com/yourlabxyz/PyPIxz/network/members)
-
-PyPIxz allows you to quickly and efficiently install the dependencies required for your Python programs to run smoothly. It is designed to integrate seamlessly with other modules, such as **logging** for log management, while ensuring compatibility with modern Python environments.
-
----
-
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Compatibility](#compatibility)
-- [Contributing](#contributing)
-- [License](#license)
-
----
-
-## Installation
-
-Install PyPIxz directly from PyPI:
-
-```bash
-$ python -m pip install pypixz
-```
-
----
-
-## Usage
-
-Here’s a simple example of how to use PyPIxz in your project:
-
 ```python
 import pypixz
 
 # Install dependencies listed in a requirements.txt file
 pypixz.install_requirements("requirements.txt", enable_logging=False)
+
+# Retrieve information from a module.
+result = pypixz.get_module_info("pypixz", version="1.1.2")
+print(result)
 ```
 
-- **Parameters**:
-  - `requirements.txt`: Path to the file containing your dependencies.
-  - `enable_logging` *(bool)*: Enables or disables logging.
+Output result of `get_module_info` command :
 
----
+```
+{'name': 'pypixz', 'description': 'PyPIxz is a simple, modern, and easy-to-use solution for managing your Python dependencies.', 'latest_version': '1.1.2', 'project_url': 'https://pypi.org/project/PyPIxz/', 'pypi_url': 'https://pypi.org/project/PyPIxz/', 'specific_version_exists': True}
+```
 
-## Compatibility
+> [!WARNING]
+> We recommend using PyPIxz LITE at the very beginning of your program to avoid running into the
+> `ModuleNotFoundError` error.
 
-PyPIxz officially supports **Python 3.8+** : 
-- **3.13.x**
-- **3.12.x**
-- **3.11.x**
-- **3.10.x**
-- **3.9.x**
-- **3.8.x**
-
----
-
-## Contributing
-
-We welcome contributions from the community! If you'd like to report an issue, propose a new feature, or contribute to 
-the development, please check out our [contributing page](https://github.com/yourlabxyz/PyPIxz/graphs/contributors).
+PyPIxz allows you to easily and simply manage the dependencies necessary for your Python program while maintaining a certain security. It is designed to be compatible with other internal modules such as **logging** for log management while ensuring compatibility with any Python environment from version 3.8.
 
 [![Contributors](https://img.shields.io/github/contributors/yourlabxyz/PyPIxz.svg)](https://github.com/yourlabxyz/PyPIxz/graphs/contributors)
 [![Issues](https://img.shields.io/github/issues/yourlabxyz/PyPIxz.svg)](https://github.com/yourlabxyz/PyPIxz/issues)
@@ -72,6 +32,30 @@ the development, please check out our [contributing page](https://github.com/you
 [![Forks](https://img.shields.io/github/forks/yourlabxyz/PyPIxz.svg)](https://github.com/yourlabxyz/PyPIxz/network/members)
 
 ---
+
+## Installing PyPIxz and Supported Versions
+
+PyPIxz is available on PyPI:
+
+```console
+$ python -m pip install pypixz
+```
+
+PyPIxz officially supports **Python 3.8+** : 
+
+> [!CAUTION]
+> You can use PyPIxz LITE with a version of Python lower than 3.8, but we do not guarantee the
+> compatibility of the program or its updates or security.
+
+---
+
+## Supported Features & Best–Practices
+PyPIxz is ready to meet the requirements of managing your dependencies in a robust and reliable way, for today's needs.
+
+- **Fast Installation**: Manage your dependencies from a `requirements.txt` file.
+- **Modularity**: Compatible with other tools and libraries, such as `logging`.
+- **Broad Compatibility**: Supports modern Python versions (3.8+).
+- **Check Module Information:** Retrieves various information about the modules you want.
 
 ## License
 
