@@ -1,5 +1,7 @@
-
 # PyPIxz
+
+> [!TIPS]
+> If you need a much lighter version for specific needs you can use our [LITE version](https://github.com/YourLabXYZ/PyPIxz-LITE).
 
 **PyPIxz** is a simple, modern, and easy-to-use solution for managing your Python dependencies.
 
@@ -44,7 +46,7 @@ $ python -m pip install pypixz
 PyPIxz officially supports **Python 3.8+** : 
 
 > [!CAUTION]
-> You can use PyPIxz LITE with a version of Python lower than 3.8, but we do not guarantee the
+> You can use PyPIxz with a version of Python lower than 3.8, but we do not guarantee the
 > compatibility of the program or its updates or security.
 
 ---
