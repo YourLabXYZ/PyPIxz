@@ -18,7 +18,7 @@ def get_module_info(module_name, version=None):
 
     try:
         # Make a request to the PyPI API to fetch module data
-        response = requests.get(base_url)
+        response = requests.get(base_url, timeout=10)
         if response.status_code == 404:
             return f"The module '{module_name}' does not exist on PyPI."
 
