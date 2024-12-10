@@ -8,13 +8,16 @@ assignees: KDUser12
 ---
 
 #### Describe the bug
+
 A clear and concise description of what the bug is.  
 Example: *When I try to [...], the application crashes.*
 
 ---
 
 #### To Reproduce
-Steps to reproduce the behavior:  
+
+Steps to reproduce the behavior:
+
 1. Go to '...'
 2. Click on '...'
 3. Scroll down to '...'
@@ -23,12 +26,14 @@ Steps to reproduce the behavior:
 ---
 
 #### Expected behavior
+
 A clear and concise description of what you expected to happen.  
 Example: *The application should [...], but instead it [...].*
 
 ---
 
 #### Screenshots
+
 If applicable, add screenshots to help explain your problem.  
 Example: *Include screenshots of the error message or behavior.*
 
@@ -36,12 +41,14 @@ Example: *Include screenshots of the error message or behavior.*
 
 #### Environment (please complete the following information)
 
-**Desktop:**  
+**Desktop:**
+
 - OS: [e.g., Windows 10, macOS Ventura]  
 - Browser: [e.g., Chrome, Firefox, Safari]  
 - Version: [e.g., 22.0.0]  
 
-**Smartphone:**  
+**Smartphone:**
+
 - Device: [e.g., iPhone 12, Galaxy S21]  
 - OS: [e.g., iOS 16, Android 13]  
 - Browser: [e.g., Safari, Chrome]  
@@ -50,6 +57,7 @@ Example: *Include screenshots of the error message or behavior.*
 ---
 
 #### Additional context
+
 Add any other context about the problem here.  
 Example: *This bug seems to occur only when [...].*
 
