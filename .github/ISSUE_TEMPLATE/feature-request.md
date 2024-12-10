@@ -7,7 +7,7 @@ assignees: KDUser12
 
 ---
 
-#### Is your feature request related to a problem? Please describe.
+#### Is your feature request related to a problem? Please describe
 A clear and concise description of the problem you're facing.  
 Example: *I'm always frustrated when [...]*
 
