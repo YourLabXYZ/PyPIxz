@@ -1,6 +1,4 @@
 # Preview Changelog
 
-Information about PyPIxz previews will be found in this file.
-
-
+## [1.2.0-preview.1](https://github.com/YourLabXYZ/PyPIxz/compare/master...release/v2.0) - 2024-12-09
 
