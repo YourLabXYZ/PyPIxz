@@ -1,6 +1,7 @@
 # PyPIxz
 
-**PyPIxz** is a simple, modern, and easy-to-use solution for managing your Python dependencies.
+**PyPIxz** is a simple, modern, and easy-to-use solution for managing your
+Python dependencies.
 
 ```python
 import pypixz
@@ -16,15 +17,18 @@ print(result)
 Output result of `get_module_info` command :
 
 ```console
-{'name': 'pypixz', 'description': 'PyPIxz is a simple, modern, and easy-to-use solution for managing your Python dependencies.', 'latest_version': '1.1.2', 'project_url': 'https://pypi.org/project/PyPIxz/', 'pypi_url': 'https://pypi.org/project/PyPIxz/', 'specific_version_exists': True}
+{'name': 'pypixz', 'description': 'PyPIxz is a simple, modern, and easy-to-use
+solution for managing your Python dependencies.', 'latest_version': '1.1.2',
+'project_url': 'https://pypi.org/project/PyPIxz/', 'pypi_url':
+'https://pypi.org/project/PyPIxz/', 'specific_version_exists': True}
 ```
 
 > [!TIP]
 > If you need a much lighter version for specific needs you can use our [LITE version](https://github.com/YourLabXYZ/PyPIxz-LITE).
 
 > [!WARNING]
-> We recommend using PyPIxz LITE at the very beginning of your program to avoid running into the
-> `ModuleNotFoundError` error.
+> We recommend using PyPIxz LITE at the very beginning of your program to
+> avoid running into the `ModuleNotFoundError` error.
 
 PyPIxz allows you to easily and simply manage the dependencies necessary for your Python program while maintaining a certain security. It is designed to be compatible with other internal modules such as **logging** for log management while ensuring compatibility with any Python environment from version 3.8.
 
@@ -43,26 +47,29 @@ PyPIxz is available on PyPI:
 python -m pip install pypixz
 ```
 
-PyPIxz officially supports **Python 3.8+** : 
+PyPIxz officially supports **Python 3.8+** :
 
 > [!CAUTION]
-> You can use PyPIxz with a version of Python lower than 3.8, but we do not guarantee the
-> compatibility of the program or its updates or security.
+> You can use PyPIxz with a version of Python lower than 3.8, but we do not
+> guarantee the compatibility of the program or its updates or security.
 
 ---
 
 ## Supported Features & Best–Practices
 
-PyPIxz is ready to meet the requirements of managing your dependencies in a robust and reliable way, for today's needs.
+PyPIxz is ready to meet the requirements of managing your dependencies in a 
+robust and reliable way, for today's needs.
 
 - **Fast Installation**: Manage your dependencies from a `requirements.txt` file.
 - **Modularity**: Compatible with other tools and libraries, such as `logging`.
 - **Broad Compatibility**: Supports modern Python versions (3.8+).
-- **Check Module Information:** Retrieves various information about the modules you want.
+- **Check Module Information:** Retrieves various information about the
+modules you want.
 
 ## License
 
-This project is licensed under the [MIT License](https://github.com/yourlabxyz/PyPIxz/blob/master/LICENSE). See 
+This project is licensed under the
+[MIT License](https://github.com/yourlabxyz/PyPIxz/blob/master/LICENSE). See
 the license file for more details.
 
 ---

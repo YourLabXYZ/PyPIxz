@@ -23,14 +23,16 @@ Example: *I would like a feature that allows [...]*
 
 #### Describe alternatives you've considered
 
-A clear and concise description of any alternative solutions or features you've considered.  
+A clear and concise description of any alternative solutions or features you've
+considered.  
 Example: *Instead of [...], another possible approach could be [...]*
 
 ---
 
 #### Additional context
 
-Add any other context, details, or screenshots related to your feature request here.  
+Add any other context, details, or screenshots related to your feature request
+here.  
 
 ---
 
