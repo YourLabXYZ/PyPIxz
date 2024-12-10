@@ -1,8 +1,5 @@
 # PyPIxz
 
-> [!TIPS]
-> If you need a much lighter version for specific needs you can use our [LITE version](https://github.com/YourLabXYZ/PyPIxz-LITE).
-
 **PyPIxz** is a simple, modern, and easy-to-use solution for managing your Python dependencies.
 
 ```python
@@ -21,6 +18,9 @@ Output result of `get_module_info` command :
 ```
 {'name': 'pypixz', 'description': 'PyPIxz is a simple, modern, and easy-to-use solution for managing your Python dependencies.', 'latest_version': '1.1.2', 'project_url': 'https://pypi.org/project/PyPIxz/', 'pypi_url': 'https://pypi.org/project/PyPIxz/', 'specific_version_exists': True}
 ```
+
+> [!TIP]
+> If you need a much lighter version for specific needs you can use our [LITE version](https://github.com/YourLabXYZ/PyPIxz-LITE).
 
 > [!WARNING]
 > We recommend using PyPIxz LITE at the very beginning of your program to avoid running into the
