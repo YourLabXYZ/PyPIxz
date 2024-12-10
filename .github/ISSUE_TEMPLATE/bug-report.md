@@ -16,7 +16,8 @@ Example: *When I try to [...], the application crashes.*
 
 #### To Reproduce
 
-Steps to reproduce the behavior:  
+Steps to reproduce the behavior:
+
 1. Go to '...'
 2. Click on '...'
 3. Scroll down to '...'
@@ -40,12 +41,14 @@ Example: *Include screenshots of the error message or behavior.*
 
 #### Environment (please complete the following information)
 
-**Desktop:**  
+**Desktop:**
+
 - OS: [e.g., Windows 10, macOS Ventura]  
 - Browser: [e.g., Chrome, Firefox, Safari]  
 - Version: [e.g., 22.0.0]  
 
-**Smartphone:**  
+**Smartphone:**
+
 - Device: [e.g., iPhone 12, Galaxy S21]  
 - OS: [e.g., iOS 16, Android 13]  
 - Browser: [e.g., Safari, Chrome]  

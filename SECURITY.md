@@ -33,6 +33,7 @@ We take security issues seriously. If you discover a vulnerability in **PyPIxz**
 ## Security Best Practices for Users
 
 To ensure the security of your environment when using **PyPIxz**, we recommend:
+
 - Always using the latest version of the software.
 - Running the application in a secure Python environment (e.g., virtual environments).
 - Reviewing third-party dependencies included in your `requirements.txt`.
