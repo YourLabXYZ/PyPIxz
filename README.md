@@ -40,7 +40,7 @@ PyPIxz allows you to easily and simply manage the dependencies necessary for you
 PyPIxz is available on PyPI:
 
 ```console
-$ python -m pip install pypixz
+python -m pip install pypixz
 ```
 
 PyPIxz officially supports **Python 3.8+** : 
