@@ -7,6 +7,11 @@ import subprocess
 import sys
 
 from .pypi_packages import get_module_info
+from ..exceptions import (
+    MissingRequirementsFileError,
+    ModuleInstallationError,
+    DependencyError
+)
 
 
 def install_requirements(file_path="requirements.txt", enable_logging=False):
@@ -23,7 +28,7 @@ def install_requirements(file_path="requirements.txt", enable_logging=False):
     if not os.path.isfile(file_path):
         message = f"The {file_path} file was not found."
         logging.error(message) if enable_logging else print(message)
-        raise FileNotFoundError(message)
+        raise MissingRequirementsFileError(message)
 
     try:
         # Run the pip install -r requirements.txt command
@@ -46,10 +51,12 @@ def install_requirements(file_path="requirements.txt", enable_logging=False):
         error_message = (f"An error occurred while installing dependencies: "
                          f"{error.stderr or 'Unknown error'}")
         logging.error(error_message) if enable_logging else print(error_message)
-        raise EnvironmentError(error_message) from error
+        raise ModuleInstallationError(error_message) from error
 
-# Example usage (disabled to prevent immediate execution)
-# install_requirements("requirements.txt")
+    except OSError as os_error:
+        message = f"OS error occurred during installation: {os_error}"
+        logging.error(message) if enable_logging else print(message)
+        raise DependencyError(message) from os_error
 
 
 def install_modules(module, version=None, latest_version=True, enable_logging=False):
@@ -94,10 +101,13 @@ def install_modules(module, version=None, latest_version=True, enable_logging=Fa
             error_message = (f"An error occurred while installing module: "
                              f"{error.stderr or 'Unknown error'}")
             logging.error(error_message) if enable_logging else print(error_message)
-            raise EnvironmentError(error_message) from error
+            raise ModuleInstallationError(error_message) from error
+
+        except OSError as os_error:
+            message = f"OS error occurred during installation: {os_error}"
+            logging.error(message) if enable_logging else print(message)
+            raise DependencyError(message) from os_error
+
     else:
         logging.error(module_info) if enable_logging else print(module_info)
-        raise EnvironmentError(module_info)
-
-# Example usage (disabled to prevent immediate execution)
-# install_module("requests", "2.26.0")
+        raise DependencyError(module_info)

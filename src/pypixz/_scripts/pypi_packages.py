@@ -3,6 +3,8 @@
 
 import requests
 
+from ..exceptions import NetworkError, JSONDecodeError
+
 
 def get_module_info(module_name, version=None):
     """
@@ -20,7 +22,7 @@ def get_module_info(module_name, version=None):
         # Make a request to the PyPI API to fetch module data
         response = requests.get(base_url, timeout=10)
         if response.status_code == 404:
-            return f"The module '{module_name}' does not exist on PyPI."
+            raise NetworkError(f"Module {module_name} not found on PyPI.")
 
         data = response.json()
         info = data.get("info", {})
@@ -38,15 +40,11 @@ def get_module_info(module_name, version=None):
         if version:
             result["specific_version_exists"] = version in releases
             if not result["specific_version_exists"]:
-                return f"Version {version} is not available."
+                raise NetworkError(f"Version {version} not found for module {module_name}.")
 
         return result
 
     except requests.RequestException as error:
-        return f"A network error occurred: {error}"
+        raise NetworkError(f"An error occurred while fetching data from PyPI: {error}") from error
     except ValueError as error:
-        return f"A value error occurred: {error}"
-
-# Example call (disabled to prevent immediate execution)
-# module_info = get_module_info("requests", "2.26.0")
-# print(module_info)
+        raise JSONDecodeError(f"Error decoding JSON data from PyPI: {error}") from error

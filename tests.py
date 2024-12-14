@@ -1,5 +1,3 @@
-# tests.py
-
 import unittest
 from unittest.mock import patch, MagicMock
 from src.pypixz import install_requirements, install_modules, get_module_info
