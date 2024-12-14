@@ -2,13 +2,27 @@
 
 ## [1.2.0-preview.2][] - 2024-12-10
 
+### Exceptions and Error Handling
+
+- Introduced a new exceptions module (`exceptions.py`) to centralize exception handling within the project:
+  - Added base exception classes such as `BasePyPIxzException` and more specific error categories: 
+    `NetworkError`, `DependencyError`, `FileError`, etc.
+  - Enhanced error granularity for dependency and network-related issues like 
+    `MissingRequirementsFileError`, `ModuleInstallationError`, and `TimeoutError`.
+
+- Refactored `install_packages.py` to integrate centralized exceptions to improve error reporting and diagnostics.
+
+### Networking and Module Information
+
+- Improved `pypi_packages.py` to utilize exception classes for managing network and JSON decoding errors.
+
+- Added robust error checking in `get_module_info()` to identify and handle specific cases of module version unavailability on PyPI.
+
 ### Build and Packaging Improvements
 
+- Enhanced the modular organization of the codebase by decoupling exception handling and core functionality.
 - Removed deprecated `install_packages.py` script for an improved module structure.
 - Updated project version to `1.2.0-preview.2` in all configuration files.
-
-### New Features
-
 - Introduced `src/pypixz/__version__.py` to centralize version and metadata information.
 
 ### Testing
