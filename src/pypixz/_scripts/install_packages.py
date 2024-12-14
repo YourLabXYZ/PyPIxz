@@ -1,12 +1,12 @@
-# (c) 2024 YourLabXYZ.
-# Licensed under MIT License.
+# Copyright (c) 2024 YourLabXYZ.
+# Licensed under the MIT License.
 
 import os
 import logging
 import subprocess
 import sys
 
-from pypixz.pypi_packages import get_module_info
+from .pypi_packages import get_module_info
 
 
 def install_requirements(file_path="requirements.txt", enable_logging=False):

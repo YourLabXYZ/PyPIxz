@@ -1,5 +1,25 @@
 # Preview Changelog
 
+## [1.2.0-preview.2][] - 2024-12-10
+
+### Build and Packaging Improvements
+
+- Removed deprecated `install_packages.py` script for an improved module structure.
+- Updated project version to `1.2.0-preview.2` in all configuration files.
+
+### New Features
+
+- Introduced `src/pypixz/__version__.py` to centralize version and metadata information.
+
+### Testing
+
+- Added a comprehensive test suite (`tests.py`) using `unittest` and `unittest.mock`.
+
+### Documentation and Module Structure
+
+- Published an improved module-level docstring in `src/pypixz/__init__.py`.
+- Streamlined module organization by relocating and restructuring components.
+
 ## [1.2.0-preview.1][] - 2024-12-09
 
 ### Build and Packaging Improvements
@@ -24,4 +44,5 @@
 - Reduced the number of characters in lines in Markdown files
 ([#45](https://github.com/YourLabXYZ/PyPIxz/issues/45))
 
-[1.2.0-preview.1]: https://github.com/YourLabXYZ/PyPIxz/compare/master...release/v1.2
+[1.2.0-preview.2]: https://github.com/YourLabXYZ/PyPIxz/compare/master...release/v1.2
+[1.2.0-preview.1]: https://github.com/YourLabXYZ/PyPIxz/compare/v1.1.3...v1.2.0-preview.1

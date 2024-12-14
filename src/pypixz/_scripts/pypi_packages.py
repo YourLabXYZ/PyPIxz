@@ -1,5 +1,5 @@
-# (c) 2024 YourLabXYZ.
-# Licensed under MIT License.
+# Copyright (c) 2024 YourLabXYZ.
+# Licensed under the MIT License.
 
 import requests
 
