@@ -1,5 +1,14 @@
 # Preview Changelog
 
+## [1.2.0-preview.3][] - 2024-12-17
+
+### Testing Enhancements
+
+- Added unit tests to validate:
+  - Retrieval of module information using `get_module_info`, including success and failure scenarios.
+  - Custom exception handling, such as `NetworkError`, `JSONDecodeError`, and others.
+  - Methods for installing modules and dependency files, covering both success and failure cases.
+
 ## [1.2.0-preview.2][] - 2024-12-10
 
 ### Exceptions and Error Handling
@@ -58,5 +67,6 @@
 - Reduced the number of characters in lines in Markdown files
 ([#45](https://github.com/YourLabXYZ/PyPIxz/issues/45))
 
-[1.2.0-preview.2]: https://github.com/YourLabXYZ/PyPIxz/compare/master...release/v1.2
+[1.2.0-preview.3]: https://github.com/YourLabXYZ/PyPIxz/compare/v1.2.0-preview.2...v1.2.0-preview.3
+[1.2.0-preview.2]: https://github.com/YourLabXYZ/PyPIxz/compare/v1.2.0-preview.1...v1.2.0-preview.2
 [1.2.0-preview.1]: https://github.com/YourLabXYZ/PyPIxz/compare/v1.1.3...v1.2.0-preview.1
