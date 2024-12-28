@@ -6,6 +6,7 @@ import logging
 import subprocess
 import sys
 
+from .pypi_packages import get_module_info
 from ..exceptions import (
     MissingRequirementsFileError,
     ModuleInstallationError,
@@ -156,3 +157,88 @@ def is_package_installed(package_line, installed_packages):
         name, required_version = package_line.split("==")
         return installed_packages.get(name.lower()) == required_version
     return package_line.lower() in installed_packages
+
+
+def install_modules(module, version=None, version_range=None, enable_logging=False):
+    """
+    Install a specified Python module with optional version, version range, and logging.
+
+    This function allows for installing a Python module from PyPI, with the option to specify
+    a specific version, version range, or using the latest available version. It supports
+    logging for debugging purposes and handles various error scenarios like dependency issues
+    or installation failure.
+
+    Parameters:
+        module: str
+            The name of the module to be installed.
+        version: str, optional
+            The specific version of the module to be installed. Defaults to None.
+        version_range: str, optional
+            A version range specifier if a specific range of versions is needed.
+            Defaults to None.
+        enable_logging: bool, optional
+            Whether to enable logging for the installation process. If True, logging
+            information will be captured. Defaults to False.
+
+    Raises:
+        ModuleInstallationError:
+            Raised when the module installation fails due to system issues, dependency
+            issues, or other reasons.
+        DependencyError:
+            Raised when the requested version or version range is incompatible or not
+            available on PyPI.
+
+    Returns:
+        bool
+            True if the module was installed successfully.
+    """
+
+    try:
+        # Retrieve module information for validation (via PyPI)
+        module_info = get_module_info(module)
+
+        # If a specific version is requested, check it
+        if version:
+            if version not in module_info.get("release", {}):
+                raise DependencyError(f"The version {version} of the module {module} cannot be found on PyPI.")
+
+        # Format the package with a version or version range
+        if version:
+            package_specifier = f"{module}=={version}"
+        elif version_range:
+            package_specifier = f"{module}{version_range}"  # e.g. "module>=1.2.0, !=2.0.0"
+        else:
+            package_specifier = module  # Latest version installed by default
+
+        # Pip command with specifier
+        command = [
+            sys.executable, "-m", "pip", "install", package_specifier
+        ]
+
+        # Call pip install
+        result = subprocess.run(
+            command,
+            check=True,  # Raises CalledProcessError if the command fails
+            capture_output=True,  # Captures stdout and stderr for debugging/logging
+            text=True  # Decodes stdout/stderr as text
+        )
+
+        success_message = f"Module {module} successfully installed."
+        logging.info(success_message) if enable_logging else print(success_message)
+
+        # Optionally log the output for debugging
+        if enable_logging:
+            logging.debug("Command output:\n%s", result.stdout)
+
+        return True
+
+    except subprocess.CalledProcessError as error:
+        error_message = (f"An error occurred while installing the module {module}: "
+                         f"{error.stderr or 'Unknown error'}")
+        logging.error(error_message) if enable_logging else print(error_message)
+        raise ModuleInstallationError(error_message) from error
+
+    except (OSError, DependencyError) as dep_error:
+        message = f"System or dependency error for the module {module}: {dep_error}"
+        logging.error(message) if enable_logging else print(message)
+        raise ModuleInstallationError(message) from dep_error
