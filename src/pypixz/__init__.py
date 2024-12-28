@@ -20,7 +20,6 @@ Basic usage:
 
 __all__ = [
     'install_requirements',
-    'install_modules',
     'get_module_info'
 ]
 
@@ -34,5 +33,5 @@ from .__version__ import (
     __copyright__
 )
 
-from ._scripts.install_packages import install_requirements, install_modules
+from ._scripts.install_packages import install_requirements
 from ._scripts.pypi_packages import get_module_info

@@ -6,7 +6,6 @@ import logging
 import subprocess
 import sys
 
-from .pypi_packages import get_module_info
 from ..exceptions import (
     MissingRequirementsFileError,
     ModuleInstallationError,
@@ -16,10 +15,26 @@ from ..exceptions import (
 
 def install_requirements(file_path="requirements.txt", enable_logging=False):
     """
-    Installs all packages listed in a requirements.txt file.
+    Install required Python packages from a requirements file.
 
-    :param file_path: Path to the requirements.txt file (default is "requirements.txt").
-    :param enable_logging: Enable logging (default is False).
+    This function enables the installation of Python package dependencies defined
+    in a requirements file. It first checks the file's existence before validating
+    if all required packages are already installed. If some packages aren't
+    installed, it executes `pip` to install the missing dependencies. The function
+    includes optional logging features to record status, success, or error messages.
+
+    Parameters:
+        file_path (str): The path to the requirements file. Defaults to
+            "requirements.txt".
+        enable_logging (bool): Flag to enable or disable logging. Defaults to False.
+
+    Raises:
+        MissingRequirementsFileError: If the specified requirements file does not
+            exist or cannot be accessed.
+        ModuleInstallationError: If an error occurs during the module installation
+            using pip.
+        DependencyError: If an OS-level error occurs during the installation
+            process.
     """
 
     file_path = os.path.abspath(file_path)
@@ -31,9 +46,31 @@ def install_requirements(file_path="requirements.txt", enable_logging=False):
         raise MissingRequirementsFileError(message)
 
     try:
-        # Run the pip install -r requirements.txt command
+        # Preloading existing packages to avoid installing duplicates.
+        existing_packages = get_installed_packages()
+
+        with open(file_path, "r") as f:
+            required_packages = [line.strip() for line in f.readlines() if line.strip()]
+
+        # Filter packages that require installation
+        packages_to_install = [
+            pkg for pkg in required_packages if not is_package_installed(pkg, existing_packages)
+        ]
+
+        if not packages_to_install:
+            success_message = "All dependencies are already installed."
+            logging.info(success_message) if enable_logging else print(success_message)
+            return
+
+
+        # Build pip command
+        command = [
+            sys.executable, "-m", "pip", "install", "--no-cache-dir", "--no-deps",
+            *packages_to_install
+        ]
+
         result = subprocess.run(
-            [sys.executable, "-m", "pip", "install", "-r", file_path],
+            command,
             check=True,  # Raises CalledProcessError if the command fails
             capture_output=True,  # Captures stdout and stderr for debugging/logging
             text=True  # Decodes stdout/stderr as text
@@ -59,55 +96,63 @@ def install_requirements(file_path="requirements.txt", enable_logging=False):
         raise DependencyError(message) from os_error
 
 
-def install_modules(module, version=None, latest_version=True, enable_logging=False):
+def get_installed_packages():
     """
-    Installs a specific version of a Python module using subprocess.
+    Retrieves a dictionary of installed Python packages along with their versions.
 
-    :param module: The name of the module to install.
-    :param version: The version of the module to install.
-    :param latest_version: Installs the latest version of the module if no version specified
-                           (default is True).
-    :param enable_logging: Enable logging (default is False).
+    The function executes the `pip freeze` command to obtain a list of installed
+    packages and their respective versions. It then parses the output, extracting
+    the package names and their versions, and stores them in a dictionary where
+    the keys are package names in lowercase, and the values are the corresponding
+    versions.
+
+    Raises:
+        subprocess.CalledProcessError: If the `pip freeze` command execution fails.
+
+    Returns:
+        dict: A dictionary containing installed package names as keys (in lowercase)
+        and their corresponding versions as values.
     """
 
-    module_info = get_module_info(module, version if version is not None else None)
+    installed_packages = {}
+    result = subprocess.run(
+        [sys.executable, "-m", "pip", "freeze"],
+        check=True,  # Raises CalledProcessError if the command fails
+        capture_output=True,  # Captures stdout and stderr for debugging/logging
+        text=True  # Decodes stdout/stderr as text
+    )
+
+    for line in result.stdout.split("\n"):
+        if "==" in line:
+            name, version = line.split("==")
+            installed_packages[name.lower()] = version
+    return installed_packages
 
 
-    if not isinstance(module_info, str):
-        if version is None and latest_version:
-            version = module_info['latest_version']
+def is_package_installed(package_line, installed_packages):
+    """
+    Check if a package is installed in the given list of installed packages.
 
-        try:
-            # Run the pip install {module} or {module}>={version} command
-            result = subprocess.run(
-                [sys.executable, "-m", "pip", "install",
-                 f"{module}>={version}" if version is not None else f"{module}"],
-                check=True,  # Raises CalledProcessError if the command fails
-                capture_output=True,  # Captures stdout and stderr for debugging/logging
-                text=True  # Decodes stdout/stderr as text
-            )
+    This function determines whether a provided package from a package_line
+    is installed by checking the installed_packages dictionary. It accounts
+    for both specific version requirements and general presence of the
+    package.
 
-            success_message = "Successfully installed module."
-            logging.info(success_message) if enable_logging else print(success_message)
+    Parameters:
+        package_line (str): A string representing the package, potentially
+        including a required version, e.g., "package_name==1.0.0".
 
-            # Optionally log the output for debugging
-            if enable_logging:
-                logging.debug("Command output:\n%s", result.stdout)
+        installed_packages (dict[str, str]): A dictionary representing the
+        currently installed packages. Keys are lowercase package names and
+        values are their installed versions.
 
-            return True
+    Returns:
+        bool: True if the package is installed with required version (if
+        specified), or if the package is found installed without-version
+        specification. False otherwise.
+    """
 
-        except subprocess.CalledProcessError as error:
-            # Handle installation errors
-            error_message = (f"An error occurred while installing module: "
-                             f"{error.stderr or 'Unknown error'}")
-            logging.error(error_message) if enable_logging else print(error_message)
-            raise ModuleInstallationError(error_message) from error
-
-        except OSError as os_error:
-            message = f"OS error occurred during installation: {os_error}"
-            logging.error(message) if enable_logging else print(message)
-            raise DependencyError(message) from os_error
-
-    else:
-        logging.error(module_info) if enable_logging else print(module_info)
-        raise DependencyError(module_info)
+    if "==" in package_line:
+        name, required_version = package_line.split("==")
+        return installed_packages.get(name.lower()) == required_version
+    return package_line.lower() in installed_packages

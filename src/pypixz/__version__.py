@@ -5,7 +5,7 @@ __title__ = 'PyPIxz'
 __description__ = ('PyPIxz module to manage your dependencies in a simple and efficient way while maintaining '
                    'guaranteed security. ')
 __url__ = 'https://github.com/YourLabXYZ/PyPIxz'
-__version__ = '1.2.0-preview.3'
+__version__ = '1.2.0-preview.4'
 __author__ = 'YourLabXYZ - Organization on GitHub'
 __license__ = 'MIT'
 __copyright__ = 'Copyright 2024 YourLabXYZ'

@@ -4,13 +4,12 @@
 class BasePyPIxzException(Exception):
     """Base exception for PyPIxz."""
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args, details=None, **kwargs):
         """
         Initialize the exception with optional additional arguments.
         """
-
-        self.details = kwargs.get('details', None)
-        super().__init__(*args, **kwargs)
+        self.details = details  # Stores the additional details
+        super().__init__(*args)  # Passes the positional arguments to Exception
 
 
 # Exceptions for dependency management and package installation
