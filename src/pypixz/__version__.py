@@ -1,4 +1,4 @@
-# Copyright (c) 2024 YourLabXYZ.
+# Copyright (c) 2025 YourLabXYZ.
 # Licensed under the MIT License.
 
 __title__ = 'PyPIxz'

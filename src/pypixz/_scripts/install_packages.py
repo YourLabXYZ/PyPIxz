@@ -1,4 +1,4 @@
-# Copyright (c) 2024 YourLabXYZ.
+# Copyright (c) 2025 YourLabXYZ.
 # Licensed under the MIT License.
 
 import os
@@ -50,8 +50,8 @@ def install_requirements(file_path="requirements.txt", enable_logging=False):
         # Preloading existing packages to avoid installing duplicates.
         existing_packages = get_installed_packages()
 
-        with open(file_path, "r") as f:
-            required_packages = [line.strip() for line in f.readlines() if line.strip()]
+        with open(file_path, "r", encoding="utf-8") as file:
+            required_packages = [line.strip() for line in file.readlines() if line.strip()]
 
         # Filter packages that require installation
         packages_to_install = [
