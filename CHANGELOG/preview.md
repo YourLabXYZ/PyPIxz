@@ -4,15 +4,18 @@
 
 ### Build and Packaging
 
-- Modified `BasePyPIxzException` to allow detailed error messages with an optional `details` argument for better error
+- Modified `BasePyPIxzException` to allow detailed error messages with an
+optional `details` argument for better error
 tracking.
 - Major improvements to the `install_requirements` function:
   - Preloads already installed dependencies to avoid duplicates.
   - Enhanced error handling with more detailed and user-friendly messages.
   - Updated documentation for parameters and possible exceptions.
 - Added new utility functions:
-  - `get_installed_packages`: Retrieves a dictionary of installed packages and their versions.
-  - `is_package_installed`: Verifies if a specific package is installed (with version support).
+  - `get_installed_packages`: Retrieves a dictionary of installed packages and
+  their versions.
+  - `is_package_installed`: Verifies if a specific package is installed
+  (with version support).
 
 ### Miscellaneous Fixes
 
