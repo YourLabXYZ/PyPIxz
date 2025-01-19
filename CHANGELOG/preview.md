@@ -1,5 +1,27 @@
 # Preview Changelog
 
+## [1.2.0-preview.4][] - 2024-12-28
+
+### Build and Packaging
+
+- Modified `BasePyPIxzException` to allow detailed error messages with an optional `details` argument for better error
+tracking.
+- Major improvements to the `install_requirements` function:
+  - Preloads already installed dependencies to avoid duplicates.
+  - Enhanced error handling with more detailed and user-friendly messages.
+  - Updated documentation for parameters and possible exceptions.
+- Added new utility functions:
+  - `get_installed_packages`: Retrieves a dictionary of installed packages and their versions.
+  - `is_package_installed`: Verifies if a specific package is installed (with version support).
+
+### Miscellaneous Fixes
+
+- Adjusted imports in `__init__.py` to reflect refactored and removed components.
+
+### Testing
+
+- Added a new file to be able to test all the program's functionalities.
+
 ## [1.2.0-preview.3][] - 2024-12-17
 
 ### Testing Enhancements
@@ -67,6 +89,7 @@
 - Reduced the number of characters in lines in Markdown files
 ([#45](https://github.com/YourLabXYZ/PyPIxz/issues/45))
 
+[1.2.0-preview.4]: https://github.com/YourLabXYZ/PyPIxz/compare/v1.2.0-preview.3...v1.2.0-preview.4
 [1.2.0-preview.3]: https://github.com/YourLabXYZ/PyPIxz/compare/v1.2.0-preview.2...v1.2.0-preview.3
 [1.2.0-preview.2]: https://github.com/YourLabXYZ/PyPIxz/compare/v1.2.0-preview.1...v1.2.0-preview.2
 [1.2.0-preview.1]: https://github.com/YourLabXYZ/PyPIxz/compare/v1.1.3...v1.2.0-preview.1
