@@ -1,5 +1,32 @@
 # Preview Changelog
 
+## [1.2.0-rc][] - 2025-01-26
+
+### Build and Packaging
+
+- Refactored the `install_packages.py` module to improve code readability and maintainability.
+- Updated `setup.py` to include additional metadata and classifiers for better package distribution.
+- Improved error handling in `install_requirements` and `install_modules` functions.
+
+### New Features
+
+- Introduced `get_installed_packages` function to retrieve a dictionary of installed packages and their versions.
+- Added `is_package_installed` function to verify if a specific package is installed with version support.
+
+### Bug Fixes
+
+- Fixed an issue where `install_requirements` would fail if the requirements file contained comments or empty lines.
+- Resolved a bug in `get_module_info` where network errors were not properly handled.
+
+### Documentation
+
+- Updated the README with new usage examples and detailed descriptions of new functions.
+- Added docstrings to all functions in `install_packages.py` and `pypi_packages.py` for better code documentation.
+
+### Testing
+
+- Added comprehensive unit tests for `install_requirements`, `install_modules`, `get_installed_packages`, and `is_package_installed` functions.
+- Improved test coverage for exception handling scenarios.
 ## [1.2.0-preview.4][] - 2024-12-28
 
 ### Build and Packaging
@@ -92,6 +119,7 @@ tracking.
 - Reduced the number of characters in lines in Markdown files
 ([#45](https://github.com/YourLabXYZ/PyPIxz/issues/45))
 
+[1.2.0-rc]: https://github.com/YourLabXYZ/PyPIxz/compare/v1.2.0-preview.4...v1.2.0-rc
 [1.2.0-preview.4]: https://github.com/YourLabXYZ/PyPIxz/compare/v1.2.0-preview.3...v1.2.0-preview.4
 [1.2.0-preview.3]: https://github.com/YourLabXYZ/PyPIxz/compare/v1.2.0-preview.2...v1.2.0-preview.3
 [1.2.0-preview.2]: https://github.com/YourLabXYZ/PyPIxz/compare/v1.2.0-preview.1...v1.2.0-preview.2
