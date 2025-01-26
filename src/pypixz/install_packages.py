@@ -1,4 +1,4 @@
-# Copyright (c) 2024 YourLabXYZ.
+# Copyright (c) 2025 YourLabXYZ.
 # Licensed under the MIT License.
 
 import os
@@ -7,7 +7,7 @@ import subprocess
 import sys
 
 from .pypi_packages import get_module_info
-from ..exceptions import (
+from .exceptions import (
     MissingRequirementsFileError,
     ModuleInstallationError,
     DependencyError
@@ -50,8 +50,8 @@ def install_requirements(file_path="requirements.txt", enable_logging=False):
         # Preloading existing packages to avoid installing duplicates.
         existing_packages = get_installed_packages()
 
-        with open(file_path, "r") as f:
-            required_packages = [line.strip() for line in f.readlines() if line.strip()]
+        with open(file_path, "r", encoding="utf-8") as file:
+            required_packages = [line.strip() for line in file.readlines() if line.strip()]
 
         # Filter packages that require installation
         packages_to_install = [
@@ -200,7 +200,8 @@ def install_modules(module, version=None, version_range=None, enable_logging=Fal
         # If a specific version is requested, check it
         if version:
             if version not in module_info.get("release", {}):
-                raise DependencyError(f"The version {version} of the module {module} cannot be found on PyPI.")
+                raise DependencyError((f"The version {version} of the module {module} cannot be "
+                                       f"found on PyPI."))
 
         # Format the package with a version or version range
         if version:

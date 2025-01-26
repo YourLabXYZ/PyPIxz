@@ -1,10 +1,10 @@
-# Copyright (c) 2024 YourLabXYZ.
+# Copyright (c) 2025 YourLabXYZ.
 # Licensed under the MIT License.
 
-import requests
 import json
+import requests
 
-from ..exceptions import NetworkError, JSONDecodeError
+from .exceptions import NetworkError, JSONDecodeError
 
 
 def get_module_info(module_name, version=None):

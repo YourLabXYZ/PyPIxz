@@ -1,10 +1,10 @@
-# Copyright (c) 2024 YourLabXYZ.
+# Copyright (c) 2025 YourLabXYZ.
 # Licensed under the MIT License.
 
 class BasePyPIxzException(Exception):
     """Base exception for PyPIxz."""
 
-    def __init__(self, *args, details=None, **kwargs):
+    def __init__(self, *args, details=None):
         """
         Initialize the exception with optional additional arguments.
         """

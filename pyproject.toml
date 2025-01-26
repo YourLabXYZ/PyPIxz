@@ -1,6 +1,6 @@
 [project]
 name = "PyPIxz"
-version = "1.2.0-preview.4"
+version = "1.2.0-rc"
 authors = [
   { name="YourLabXYZ - Organization on GitHub" },
 ]
