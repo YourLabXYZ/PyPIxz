@@ -1,4 +1,4 @@
-# Copyright (c) 2024 YourLabXYZ.
+# Copyright (c) 2025 YourLabXYZ.
 # Licensed under the MIT License.
 
 """
@@ -14,7 +14,7 @@ Basic usage:
     result = pypixz.get_module_info("pypixz", version="1.1.2")
     print(result)
 
-:copyright: (c) 2024 YourLabXYZ.
+:copyright: (c) 2025 YourLabXYZ.
 :license: MIT, see LICENSE for more details.
 """
 
@@ -34,5 +34,5 @@ from .__version__ import (
     __copyright__
 )
 
-from ._scripts.install_packages import install_requirements, install_modules
-from ._scripts.pypi_packages import get_module_info
+from .install_packages import install_requirements, install_modules
+from .pypi_packages import get_module_info

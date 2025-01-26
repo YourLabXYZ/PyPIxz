@@ -4,7 +4,7 @@
 import json
 import requests
 
-from ..exceptions import NetworkError, JSONDecodeError
+from .exceptions import NetworkError, JSONDecodeError
 
 
 def get_module_info(module_name, version=None):

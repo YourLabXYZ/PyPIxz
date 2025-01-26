@@ -7,7 +7,7 @@ import subprocess
 import sys
 
 from .pypi_packages import get_module_info
-from ..exceptions import (
+from .exceptions import (
     MissingRequirementsFileError,
     ModuleInstallationError,
     DependencyError
