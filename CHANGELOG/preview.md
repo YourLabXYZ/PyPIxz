@@ -1,5 +1,12 @@
 # Preview Changelog
 
+## [1.2.1][] - 2025-10-20
+
+### Code and Metadata Updates
+
+- Updated copyright year in `__version__.py` → changed from "2024" to "2025" in the `__copyright__` variable.
+- Replaced all single quotes (' ') with double quotes (" ") in `__version__.py` for style consistency.
+
 ## [1.2.0][] - 2025-01-26
 
 ## [1.2.0-rc][] - 2025-01-26
@@ -122,6 +129,7 @@ tracking.
 - Reduced the number of characters in lines in Markdown files
 ([#45](https://github.com/YourLabXYZ/PyPIxz/issues/45))
 
+[1.2.1]: https://github.com/YourLabXYZ/PyPIxz/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/YourLabXYZ/PyPIxz/compare/v1.2.0-rc...v1.2.0
 [1.2.0-rc]: https://github.com/YourLabXYZ/PyPIxz/compare/v1.2.0-preview.4...v1.2.0-rc
 [1.2.0-preview.4]: https://github.com/YourLabXYZ/PyPIxz/compare/v1.2.0-preview.3...v1.2.0-preview.4
