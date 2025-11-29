@@ -1,3 +1,6 @@
+> [!CAUTION]
+> This version of PyPixz is no longer maintained and its repository has been moved. [Click here](https://github.com/zkeepr/pypixz) to access the new repository.
+
 # PyPIxz
 
 **PyPIxz** is a simple, modern, and easy-to-use solution for managing your
